@@ -1,0 +1,15 @@
+{
+  "name": "Car Wash App",
+  "short_name": "Car Wash",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "theme_color": "#007bff",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "logo512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
