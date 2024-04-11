@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: car-wash-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: car-wash
+  template:
+    metadata:
+      labels:
+        app: car-wash
+    spec:
+      containers:
+        - name: car-wash-container
+          image: your-registry/car-wash-website:latest
+          ports:
+            - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: car-wash-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: car-wash
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
