@@ -1,0 +1,12 @@
+apiVersion: skaffold/v2beta20
+kind: Config
+build:
+  artifacts:
+    - image: your-registry/car-wash-website
+      context: path/to/your/app
+      docker:
+        Dockerfile: Dockerfile
+deploy:
+  kubectl:
+    manifests:
+      - cluster.yaml
